@@ -9,8 +9,11 @@ app.use(cors());
 
 // Connect to MongoDB
 const mongoURI =
-  "mongodb+srv://yahmad2601:<Z5rBn3RLSAO50JLw>@tap-catch.ibp9b.mongodb.net/?retryWrites=true&w=majority&appName=Tap-Catch";
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+  "mongodb+srv://yahmad2601:Z5rBn3RLSAO50JLw@tap-catch.ibp9b.mongodb.net/?retryWrites=true&w=majority&appName=Tap-Catch";
+mongoose
+  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 const leaderboardSchema = new mongoose.Schema({
   name: String,
