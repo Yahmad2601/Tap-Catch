@@ -8,7 +8,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Connect to MongoDB
-const mongoURI = "your-mongodb-connection-string";
+const mongoURI =
+  "mongodb+srv://yahmad2601:<6QsAAL82YqZ03NGr>@tap-catch.ibp9b.mongodb.net/?retryWrites=true&w=majority&appName=Tap-Catch";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const leaderboardSchema = new mongoose.Schema({
